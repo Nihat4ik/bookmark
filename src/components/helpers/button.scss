@@ -1,0 +1,77 @@
+@import "../../variables.scss";
+
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  text-decoration: none;
+
+  &--red {
+    background-color: $light-red;
+    padding: 1.1rem 3.4rem;
+    color: $white;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: $button-shadow;
+    letter-spacing: 1.5px;
+    transition: 0.2s all;
+    font-weight: 500;
+
+    &:hover {
+      box-shadow: inset 0px 0px 0px 2px $light-red;
+      background-color: $white;
+      color: $light-red;
+    }
+  }
+
+  &--blue {
+    background-color: $purple-blue;
+    padding: 1rem 2.5rem;
+    color: $white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    border-radius: 5px;
+    box-shadow: $button-shadow;
+    transition: 0.2s all;
+
+    &:hover {
+      box-shadow: inset 0px 0px 0px 2px $purple-blue;
+      background-color: $white;
+      color: $purple-blue;
+    }
+  }
+
+  &--gray {
+    background-color: $light-gray;
+    color: $dark-black;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 1rem 2.5rem;
+    border-radius: 5px;
+    box-shadow: $button-shadow;
+    letter-spacing: 0.25px;
+    transition: all 0.2s;
+
+    &:hover {
+      box-shadow: inset 0px 0px 0px 2px $dark-black;
+      background-color: $white;
+      color: $dark-black;
+    }
+  }
+
+  &--burger {
+    background-color: rgba($dark-black, 0.95);
+    padding: 1rem 0;
+    color: $white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    letter-spacing: 2.3px;
+    font-weight: 500;
+    box-shadow: inset 0px 0px 0px 2px $white;
+    width: 100%;
+    margin-top: 2.4rem;
+  }
+}

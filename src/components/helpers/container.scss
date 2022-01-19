@@ -1,0 +1,32 @@
+.container {
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  width: 100%;
+
+  &--standart {
+    max-width: 1140px;
+  }
+
+  &--big {
+    max-width: 1190px;
+  }
+
+  &--medium {
+    max-width: 960px;
+  }
+
+  &--medium--2 {
+    max-width: 760px;
+  }
+
+  &--small {
+    max-width: 570px;
+  }
+  &--very--small {
+    max-width: 480px;
+  }
+
+  &--mobile {
+    max-width: 340px;
+  }
+}

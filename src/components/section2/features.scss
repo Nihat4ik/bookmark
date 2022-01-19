@@ -1,0 +1,168 @@
+@import "../../variables.scss";
+
+.section__features {
+  padding-top: 18rem;
+  position: relative;
+
+  @media only screen and (max-width: 770px) {
+    padding-top: 14rem;
+  }
+}
+
+.features {
+  &__scrollbar {
+    margin-top: 7.2rem;
+    border-bottom: 1px solid rgba(73, 93, 207, 0.2);
+    margin-bottom: 7.2rem;
+
+    &--list {
+      display: flex;
+      list-style: none;
+      justify-content: space-around;
+      align-items: center;
+
+      @media only screen and (max-width: 650px) {
+        flex-direction: column;
+      }
+    }
+
+    &--item {
+      padding-bottom: 2.7rem;
+      width: 33%;
+      text-align: center;
+      transition: 0.2s all;
+
+      @media only screen and (max-width: 650px) {
+        width: 100%;
+        border-top: 1px solid rgba(73, 93, 207, 0.2);
+        padding: 2rem 0;
+      }
+      &--active {
+        border-bottom: 4px solid $light-red;
+      }
+    }
+
+    &--link {
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      font-size: $heading-medium2;
+      color: rgba($dark-black, 0.75);
+      text-align: center;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $light-red;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 770px) {
+      flex-direction: column;
+    }
+  }
+
+  &__col1 {
+    flex-basis: 48.2%;
+  }
+  &__col2 {
+    flex-basis: 40.1%;
+    @media only screen and (max-width: 770px) {
+      text-align: center;
+    }
+
+    &--title {
+      font-size: $heading-big;
+      font-weight: 500;
+      line-height: 5.2rem;
+      margin-bottom: 1.5rem;
+      @media only screen and (max-width: 870px) {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+      }
+
+      @media only screen and (max-width: 770px) {
+        text-align: center;
+      }
+    }
+
+    &--par {
+      line-height: 2.8rem;
+      font-size: $font-par;
+      color: rgba($dark-black, 0.5);
+      margin-bottom: 3.2rem;
+
+      @media only screen and (max-width: 870px) {
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__decoration {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 70%;
+    left: 0%;
+    width: 45%;
+    transform: rotate(180deg);
+
+    @media only screen and (max-width: 1280px) {
+      top: 75%;
+    }
+
+    @media only screen and (max-width: 1080px) {
+      top: 80%;
+    }
+    @media only screen and (max-width: 770px) {
+      top: 56%;
+      width: 80%;
+    }
+    @media only screen and (max-width: 750px) {
+      top: 57%;
+    }
+    @media only screen and (max-width: 710px) {
+      top: 59%;
+    }
+    @media only screen and (max-width: 650px) {
+      top: 64%;
+    }
+    @media only screen and (max-width: 600px) {
+      top: 66%;
+    }
+    @media only screen and (max-width: 570px) {
+      top: 67%;
+    }
+    @media only screen and (max-width: 570px) {
+      width: 85%;
+    }
+    @media only screen and (max-width: 320px) {
+      top: 65%;
+    }
+  }
+}
+
+.tablet {
+  max-width: 100%;
+  height: auto;
+}
+
+.option-enter {
+  transform: scale(0);
+}
+.option-enter.option-enter-active {
+  transform: scale(1);
+  transition: 3s all ease;
+}
+.option-exit {
+  transform: scale(1);
+}
+.option-exit.option-exit-active {
+  transform: scale(0);
+  transition: 3s all ease;
+}

@@ -1,0 +1,155 @@
+@import "../../variables.scss";
+
+.intro {
+  padding-top: 13rem;
+  position: relative;
+
+  @media only screen and (max-width: 770px) {
+    padding-top: 8rem;
+  }
+
+  @media only screen and (max-width: 570px) {
+    padding-top: 6rem;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 770px) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    font-size: $heading-giant;
+    font-weight: 500;
+    line-height: 5.2rem;
+    margin-bottom: 2.5rem;
+
+    @media only screen and (max-width: 1120px) {
+      font-size: 4.2rem;
+      line-height: 4.8rem;
+    }
+
+    @media only screen and (max-width: 960px) {
+      font-size: 4rem;
+    }
+
+    @media only screen and (max-width: 920px) {
+      font-size: 3.5rem;
+    }
+    @media only screen and (max-width: 770px) {
+      font-size: 4.2rem;
+    }
+    @media only screen and (max-width: 420px) {
+      font-size: 3.8rem;
+    }
+    @media only screen and (max-width: 380px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__par {
+    opacity: 0.5;
+    font-size: $font-par;
+    line-height: 2.8rem;
+    margin-bottom: 3.2rem;
+
+    @media only screen and (max-width: 1120px) {
+      font-size: 1.7rem;
+      line-height: 2.6rem;
+    }
+
+    @media only screen and (max-width: 960px) {
+      font-size: 1.6rem;
+    }
+    @media only screen and (max-width: 770px) {
+      font-size: 1.8rem;
+    }
+    @media only screen and (max-width: 380px) {
+      font-size: 1.7rem;
+    }
+  }
+
+  &__col1 {
+    flex-basis: 46.5%;
+
+    @media only screen and (max-width: 770px) {
+      text-align: center;
+      margin-top: 5rem;
+    }
+  }
+
+  &__col2 {
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 49.8%;
+
+    @media only screen and (max-width: 770px) {
+      order: -1;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__decoration {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    right: 0%;
+    width: 45%;
+    height: auto;
+
+    @media only screen and (max-width: 1280px) {
+      top: 60%;
+    }
+
+    @media only screen and (max-width: 770px) {
+      top: 30%;
+      width: 85%;
+    }
+
+    @media only screen and (max-width: 680px) {
+      top: 35%;
+    }
+
+    @media only screen and (max-width: 570px) {
+      top: 30%;
+    }
+
+    @media only screen and (max-width: 420px) {
+      width: 95%;
+      top: 25%;
+    }
+  }
+}
+
+.tablet {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn__intro {
+  @media only screen and (max-width: 920px) {
+    padding: 1rem 2rem;
+  }
+  @media only screen and (max-width: 850px) {
+    padding: 0.8rem 1.2rem;
+  }
+
+  @media only screen and (max-width: 320px) {
+    font-size: 1.2rem;
+  }
+
+  @media only screen and (max-width: 280px) {
+    font-size: 1.1rem;
+  }
+  &--blue {
+    margin-right: 1.6rem;
+
+    @media only screen and (max-width: 920px) {
+      margin-right: 1.2rem;
+    }
+  }
+}
