@@ -1,33 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionHeader from "../helpers/SectionHeader";
 import "./features.scss";
-import { connect } from "react-redux";
-import { setActive } from "../../actions";
 import FeaturesContent from "./FeaturesContent";
 import Container from "../helpers/Container";
 
-const Features = ({ setActive, active }) => {
+const features = [
+  {
+    featureName: "Simple Bookmarking",
+    id: "1",
+  },
+  {
+    featureName: "Speedy Searching",
+    id: "2",
+  },
+  {
+    featureName: "Easy Sharing",
+    id: "3",
+  },
+];
+
+const Features = () => {
+  const [active, setActive] = useState("1");
   const onListClick = (e) => {
     if (e.target.nodeName === "A") {
       e.preventDefault();
       setActive(e.target.getAttribute("id"));
     }
   };
-
-  const features = [
-    {
-      featureName: "Simple Bookmarking",
-      id: "1",
-    },
-    {
-      featureName: "Speedy Searching",
-      id: "2",
-    },
-    {
-      featureName: "Easy Sharing",
-      id: "3",
-    },
-  ];
 
   const renderedFeatures = features.map((feature) => {
     return (
@@ -66,16 +65,11 @@ const Features = ({ setActive, active }) => {
             </ul>
           </div>
         </Container>
-        <FeaturesContent />
+
+        <FeaturesContent active={active} />
       </section>
     </React.Fragment>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    active: state.active,
-  };
-};
-
-export default connect(mapStateToProps, { setActive })(Features);
+export default Features;

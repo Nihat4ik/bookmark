@@ -8,18 +8,19 @@
 
   &--red {
     background-color: $light-red;
-    padding: 1.1rem 3.4rem;
+    padding: 0.9rem 3.2rem;
     color: $white;
     font-size: 1.3rem;
     text-transform: uppercase;
     border-radius: 5px;
     box-shadow: $button-shadow;
+    border: 2px solid transparent;
     letter-spacing: 1.5px;
     transition: 0.2s all;
     font-weight: 500;
 
     &:hover {
-      box-shadow: inset 0px 0px 0px 2px $light-red;
+      border: 2px solid $light-red;
       background-color: $white;
       color: $light-red;
     }
@@ -27,17 +28,18 @@
 
   &--blue {
     background-color: $purple-blue;
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 2.3rem;
     color: $white;
     font-size: 1.4rem;
     font-weight: 500;
     letter-spacing: 0.25px;
     border-radius: 5px;
+    border: 2px solid transparent;
     box-shadow: $button-shadow;
     transition: 0.2s all;
 
     &:hover {
-      box-shadow: inset 0px 0px 0px 2px $purple-blue;
+      border: 2px solid $purple-blue;
       background-color: $white;
       color: $purple-blue;
     }
@@ -48,14 +50,15 @@
     color: $dark-black;
     font-size: 1.4rem;
     font-weight: 500;
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 2.3rem;
     border-radius: 5px;
+    border: 2px solid transparent;
     box-shadow: $button-shadow;
     letter-spacing: 0.25px;
     transition: all 0.2s;
 
     &:hover {
-      box-shadow: inset 0px 0px 0px 2px $dark-black;
+      border: 2px solid $dark-black;
       background-color: $white;
       color: $dark-black;
     }

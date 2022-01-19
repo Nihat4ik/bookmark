@@ -31,6 +31,7 @@
       width: 33%;
       text-align: center;
       transition: 0.2s all;
+      border-bottom: 4px solid transparent;
 
       @media only screen and (max-width: 650px) {
         width: 100%;
@@ -60,7 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    min-height: 43rem;
     @media only screen and (max-width: 770px) {
       flex-direction: column;
     }
@@ -149,20 +150,4 @@
 
 .tablet {
   max-width: 100%;
-  height: auto;
-}
-
-.option-enter {
-  transform: scale(0);
-}
-.option-enter.option-enter-active {
-  transform: scale(1);
-  transition: 3s all ease;
-}
-.option-exit {
-  transform: scale(1);
-}
-.option-exit.option-exit-active {
-  transform: scale(0);
-  transition: 3s all ease;
 }

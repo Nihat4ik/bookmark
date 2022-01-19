@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "../helpers/Container";
 import Button from "../helpers/Button";
 import SocialLogo from "../helpers/SocialLogo";
-import { toggleMenu } from "../../actions/index";
-import { connect } from "react-redux";
+import { MenuContext } from "../../contexts/MenuContext";
 
-const BurgerMenu = ({ toggleMenu }) => {
+const BurgerMenu = () => {
+  const { menu, setMenu } = useContext(MenuContext);
   const onBurgerClick = (e) => {
     if (e.target.classList.contains("burgermenu")) {
-      toggleMenu();
+      setMenu(!menu);
     }
   };
   return (
@@ -29,7 +29,7 @@ const BurgerMenu = ({ toggleMenu }) => {
                 </div>
                 <div
                   className="burgermenu__exit--box"
-                  onClick={() => toggleMenu()}
+                  onClick={() => setMenu(false)}
                 >
                   <img
                     alt="exit"
@@ -80,4 +80,4 @@ const BurgerMenu = ({ toggleMenu }) => {
   );
 };
 
-export default connect(null, { toggleMenu })(BurgerMenu);
+export default BurgerMenu;

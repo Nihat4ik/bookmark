@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../helpers/Container";
 import Button from "../helpers/Button";
 import "./header.scss";
 import { useMediaQuery } from "react-responsive";
 import BurgerMenu from "../header/BurgerMenu";
-import { toggleMenu } from "../../actions/index";
-import { connect } from "react-redux";
+import { ReactComponent as Logo } from "../../images/logo-bookmark.svg";
+import { ReactComponent as BurgerIcon } from "../../images/icon-hamburger.svg";
+import PreventScrolling from "../../hooks/preventScrolling";
+import { MenuContext } from "../../contexts/MenuContext";
 
-const Header = ({ toggleMenu, menu }) => {
+const Header = () => {
+  const [menu, setMenu] = useState(false);
+
+  PreventScrolling(menu);
   const mobileHeader = useMediaQuery({
     query: "(max-width:410px)",
   });
@@ -16,7 +21,7 @@ const Header = ({ toggleMenu, menu }) => {
   });
 
   const onMenuClick = () => {
-    toggleMenu();
+    setMenu(!menu);
   };
 
   return (
@@ -27,11 +32,7 @@ const Header = ({ toggleMenu, menu }) => {
             <div className="header__wrapper">
               <div className="header__col1">
                 <a href="/" className="header__nav--logo">
-                  <img
-                    className="logo"
-                    src={require("../../images/logo-bookmark.svg").default}
-                    alt="Logo"
-                  />
+                  <Logo />
                 </a>
               </div>
               <div className="header__col2">
@@ -69,10 +70,7 @@ const Header = ({ toggleMenu, menu }) => {
                       className="header__nav--burger--box"
                       onClick={onMenuClick}
                     >
-                      <img
-                        className="header__nav--burger"
-                        src={require("../../images/icon-hamburger.svg").default}
-                      />
+                      <BurgerIcon />
                     </div>
                   </React.Fragment>
                 )}
@@ -80,16 +78,14 @@ const Header = ({ toggleMenu, menu }) => {
             </div>
           </nav>
         </Container>
-        {menu && mobileHeader && <BurgerMenu />}
+        {menu && mobileHeader && (
+          <MenuContext.Provider value={{ menu, setMenu }}>
+            <BurgerMenu menu={menu} setMenu={setMenu} />
+          </MenuContext.Provider>
+        )}
       </header>
     </React.Fragment>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    menu: state.menu,
-  };
-};
-
-export default connect(mapStateToProps, { toggleMenu })(Header);
+export default Header;
