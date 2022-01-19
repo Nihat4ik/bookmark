@@ -6,14 +6,12 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
+    "framer-motion": "^6.0.0",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-responsive": "^8.2.0",
-    "react-scripts": "4.0.1",
-    "react-spring": "^9.0.0-rc.3",
-    "redux-accordion": "^1.0.73",
-    "web-vitals": "^0.2.4"
+    "react-scripts": "4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,9 +37,4 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "react-redux": "^7.2.2",
-    "react-transition-group": "^4.4.1",
-    "redux": "^4.0.5"
-  }
 }
