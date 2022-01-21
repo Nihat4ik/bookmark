@@ -1,0 +1,35 @@
+@import "../../variables.scss";
+.social {
+  &__list {
+    display: flex;
+
+    &--item {
+      &:not(:last-child) {
+        margin-right: 2.4rem;
+      }
+
+      &--icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        display: flex;
+        align-items: center;
+        & > path {
+          transition: 0.2s all;
+        }
+        &:hover > path {
+          transform: scale(1.05);
+        }
+      }
+      &--facebook {
+        &:hover > path {
+          fill: $facebook;
+        }
+      }
+      &--twitter {
+        &:hover > path {
+          fill: $twitter;
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "../helpers/Container";
-import SocialLogo from "../helpers/SocialLogo";
 import "./footer.scss";
+
 const Footer = () => {
   return (
     <React.Fragment>
@@ -38,19 +38,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="footer__col2">
-              <ul className="social__list">
-                <li className="social__list--item">
-                  <a href="/">
-                    <SocialLogo className="facebook" />
-                  </a>
-                </li>
-                <li className="social__list--item"></li>
-                <a href="/">
-                  <SocialLogo className="twitter" />
-                </a>
-              </ul>
-            </div>
+            <div className="footer__col2"></div>
           </div>
         </Container>
       </footer>

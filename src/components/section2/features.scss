@@ -31,15 +31,12 @@
       width: 33%;
       text-align: center;
       transition: 0.2s all;
-      border-bottom: 4px solid transparent;
+      position: relative;
 
       @media only screen and (max-width: 650px) {
         width: 100%;
         border-top: 1px solid rgba(73, 93, 207, 0.2);
         padding: 2rem 0;
-      }
-      &--active {
-        border-bottom: 4px solid $light-red;
       }
     }
 
@@ -54,6 +51,16 @@
       &:hover {
         color: $light-red;
       }
+    }
+
+    &--underline {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      background-color: $light-red;
+      height: 4px;
+      width: 100%;
     }
   }
 

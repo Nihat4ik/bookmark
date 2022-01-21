@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import Container from "../helpers/Container";
 import Button from "../helpers/Button";
-import SocialLogo from "../helpers/SocialLogo";
 import { MenuContext } from "../../contexts/MenuContext";
+import SocialList from "../helpers/SocialList";
 
 const BurgerMenu = () => {
   const { menu, setMenu } = useContext(MenuContext);
@@ -60,17 +60,7 @@ const BurgerMenu = () => {
                 </div>
               </div>
               <div className="burgermenu__social--box">
-                <ul className="social__list">
-                  <li className="social__list--item">
-                    <a href="/">
-                      <SocialLogo className="facebook" />
-                    </a>
-                  </li>
-                  <li className="social__list--item"></li>
-                  <a href="/">
-                    <SocialLogo className="twitter" />
-                  </a>
-                </ul>
+                <SocialList />
               </div>
             </div>
           </div>

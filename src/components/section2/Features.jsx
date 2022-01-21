@@ -3,6 +3,7 @@ import SectionHeader from "../helpers/SectionHeader";
 import "./features.scss";
 import FeaturesContent from "./FeaturesContent";
 import Container from "../helpers/Container";
+import { LayoutGroup, motion } from "framer-motion";
 
 const features = [
   {
@@ -30,16 +31,17 @@ const Features = () => {
 
   const renderedFeatures = features.map((feature) => {
     return (
-      <li
-        key={feature.id}
-        className={`features__scrollbar--item ${
-          active === feature.id ? `features__scrollbar--item--active` : ""
-        }`}
-      >
+      <motion.li key={feature.id} className={`features__scrollbar--item`}>
         <a href="/" className="features__scrollbar--link" id={feature.id}>
           {feature.featureName}
         </a>
-      </li>
+        {active === feature.id && (
+          <motion.span
+            layoutId="underline"
+            className="features__scrollbar--underline"
+          ></motion.span>
+        )}
+      </motion.li>
     );
   });
 
@@ -61,7 +63,7 @@ const Features = () => {
         <Container className="container--medium--2">
           <div className="features__scrollbar">
             <ul className="features__scrollbar--list" onClick={onListClick}>
-              {renderedFeatures}
+              <LayoutGroup>{renderedFeatures}</LayoutGroup>
             </ul>
           </div>
         </Container>

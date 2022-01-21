@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "../helpers/Container";
 import Button from "../helpers/Button";
+import { AnimatePresence, motion } from "framer-motion";
 
 const sectionInformation = [
   {
@@ -23,35 +24,80 @@ const sectionInformation = [
   },
 ];
 
+const imageVariants = {
+  hidden: {
+    x: -300,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
+const textVariants = {
+  hidden: {
+    x: 300,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+  exit: {
+    x: 300,
+    opacity: 0,
+  },
+};
+
 const FeaturesContent = ({ active }) => {
   const section = sectionInformation.find((section) => {
     return section.id === active;
   });
 
   return (
-    <Container className="container--standart">
-      <div className="features__wrapper">
-        <div className="features__col1">
-          <img
-            src={
-              require(`../../images/illustration-features-tab-${parseInt(
-                active
-              )}.svg`).default
-            }
-            alt="tablet"
-            className="tablet"
-          />
-        </div>
+    <AnimatePresence>
+      <Container className="container--standart">
+        <div className="features__wrapper">
+          <motion.div
+            initial="hidden"
+            variants={imageVariants}
+            animate="visible"
+            className="features__col1"
+          >
+            <img
+              src={
+                require(`../../images/illustration-features-tab-${parseInt(
+                  active
+                )}.svg`).default
+              }
+              alt="tablet"
+              className="tablet"
+            />
+          </motion.div>
 
-        <div className="features__col2">
-          <h2 className="features__col2--title">{section.title}</h2>
-          <p className="features__col2--par">{section.paragraph}</p>
-          <div className="features__col2--button">
-            <Button className="btn--blue features__button" text="More info" />
-          </div>
+          <motion.div
+            className="features__col2"
+            initial="hidden"
+            variants={textVariants}
+            animate="visible"
+            exit="exit"
+          >
+            <h2 className="features__col2--title">{section.title}</h2>
+            <p className="features__col2--par">{section.paragraph}</p>
+            <div className="features__col2--button">
+              <Button className="btn--blue features__button" text="More info" />
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </AnimatePresence>
   );
 };
 
